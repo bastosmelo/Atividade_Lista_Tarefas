@@ -1,20 +1,18 @@
-/* Garantir que o body ocupe a altura total da página */
+/* Garantir que o html e o body ocupem 100% da altura */
 html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Aplicar flexbox para centralizar o container vertical e horizontalmente */
+/* Container principal que utiliza flexbox para organizar o layout */
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #f4f4f4;
 }
 
-/* Container de tarefas */
+/* Conteúdo flexível que pode crescer */
 .container {
     background: #fff;
     padding: 20px;
@@ -22,10 +20,11 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 400px;
     text-align: center;
-    margin-bottom: 20px; /* espaço acima do rodapé */
+    margin: 20px auto;
+    flex-grow: 1; /* Faz o container crescer conforme necessário */
 }
 
-/* Cabeçalho da lista */
+/* Cabeçalho */
 h1 {
     margin-bottom: 20px;
 }
@@ -41,7 +40,7 @@ input {
 
 button {
     padding: 10px 15px;
-    background: green;
+    background: #28a745;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -50,13 +49,15 @@ button {
 }
 
 button:hover {
-    background: darkgreen;
+    background: #218838;
 }
 
 /* Lista de tarefas */
 ul {
     list-style: none;
     padding: 0;
+    max-height: 300px; /* Define um tamanho máximo, para evitar a lista crescer indefinidamente */
+    overflow-y: auto; /* Permite rolagem vertical caso a lista cresça */
 }
 
 li {
@@ -70,7 +71,7 @@ li {
 }
 
 li button {
-    background: red;
+    background: #dc3545;
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -81,18 +82,18 @@ li button {
 }
 
 li button:hover {
-    background: red;
+    background: #c82333;
 }
 
-/* Rodapé */
+/* Rodapé fixo ao final da página */
 .footer {
     text-align: center;
     padding: 10px;
     background-color: #343a40;
     color: lightgray;
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    margin-top: auto; /* Empurra o rodapé para o final da página */
 }
 
 .social-links {

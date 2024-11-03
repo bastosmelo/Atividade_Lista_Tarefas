@@ -41,7 +41,7 @@ input {
 
 button {
     padding: 10px 15px;
-    background: #28a745;
+    background: green;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background: #218838;
+    background: darkgreen;
 }
 
 /* Lista de tarefas */
@@ -70,7 +70,7 @@ li {
 }
 
 li button {
-    background: #dc3545;
+    background: red;
     border: none;
     color: #fff;
     padding: 5px 10px;

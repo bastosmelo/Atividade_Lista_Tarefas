@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 /* Container principal que utiliza flexbox para organizar o layout */
@@ -85,25 +86,41 @@ li button:hover {
     background: red;
 }
 
-/* Rodapé fixo ao final da página */
-.footer {
+/* Footer */
+footer {
+    width: 100%;
     text-align: center;
     padding: 10px;
     background-color: #343a40;
     color: lightgray;
-    width: 100%;
     position: relative;
     margin-top: auto; /* Empurra o rodapé para o final da página */
-}
-
-.social-links {
+    bottom: 0;
+  }
+  
+  /* Estilo para ícones sociais */
+  .social-icons {
+    text-align: center;
     margin-bottom: 10px;
-}
-
-.logo {
+  }
+  
+  .social-icons img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid #333;
     margin: 0 5px;
-}
+    cursor: pointer;
+  }
+  
+  /* Responsividade para Footer e Ícones Sociais */
+  @media (max-width: 768px) {
+    .social-icons img {
+      width: 25px;
+      height: 25px;
+    }
+  
+    footer p {
+      font-size: 0.9em;
+    }
+  }
